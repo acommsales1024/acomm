@@ -1,3 +1,74 @@
-<h1>블로그</h1>
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블루톤 홈페이지 - 까미냥이</title>
+    <!-- style.css 파일을 연결합니다. 같은 폴더에 있어야 합니다. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>까미냥이의 블루 웹</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li class="dropdown">
+                    <a href="#catalog">카다로그</a>
+                    <div class="dropdown-content">
+                        <a href="catalog_gw1.html">GW1</a>
+                        <a href="catalog_gw2.html">GW2</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#engineering">엔지니어링</a>
+                    <div class="dropdown-content">
+                        <a href="engineering_gw1.html">GW1</a>
+                        <a href="engineering_gw2.html">GW2</a>
+                    </div>
+                </li>
+                <li><a href="#contact">문의하기</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<p style="color:blue;">반갑습니다.</p>
+    <main>
+        <section id="home" class="hero-section">
+            <h2>안녕하세요, 까미냥이의 홈페이지에 오신 것을 환영합니다!</h2>
+            <p>이곳은 데이터 분석, AI 개발, 경제 트렌드 등 다양한 주제를 다루는 저의 온라인 공간입니다. </p>
+            <p>블루톤의 차분하고 안정적인 디자인으로 구성되었습니다.</p>
+        </section>
+
+        <section id="catalog" class="content-section">
+            <h2>카다로그</h2>
+            <p>다양한 제품 및 정보 카다로그를 확인하실 수 있습니다.</p>
+            <p>원하는 카다로그를 선택하여 상세 내용을 열람해보세요.</p>
+            <!-- 실제 GW1, GW2 내용은 해당 페이지 (catalog_gw1.html 등)에서 다룹니다. -->
+        </section>
+
+        <section id="engineering" class="content-section">
+            <h2>엔지니어링</h2>
+            <p>최신 기술과 전문 지식을 활용한 엔지니어링 솔루션을 제공합니다.</p>
+            <p>각 분야별 GW 시리즈에 대한 상세 정보를 확인해보세요.</p>
+            <!-- 실제 GW1, GW2 내용은 해당 페이지 (engineering_gw1.html 등)에서 다룹니다. -->
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2>문의하기</h2>
+            <p>궁금한 점이나 협력 문의가 있으시면 언제든지 연락 주세요.</p>
+            <form>
+                <input type="text" placeholder="이름" required>
+                <input type="email" placeholder="이메일" required>
+                <textarea placeholder="메시지 내용을 입력하세요." rows="5"></textarea>
+                <button type="submit">메시지 전송</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 까미냥이의 웹사이트. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>
