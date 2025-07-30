@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>블루톤 홈페이지 - 까미냥이</title>
+    <title>ACOMM Sales</title>
     <!-- style.css 파일을 연결합니다. 같은 폴더에 있어야 합니다. -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>까미냥이의 블루 웹</h1>
+            <h1>ACOMM Products</h1>
         </div>
         <nav>
             <ul>
@@ -36,16 +36,93 @@
 
     <main>
         <section id="home" class="hero-section">
-            <h2>안녕하세요, 까미냥이의 홈페이지에 오신 것을 환영합니다!</h2>
-            <p>이곳은 데이터 분석, AI 개발, 경제 트렌드 등 다양한 주제를 다루는 저의 온라인 공간입니다. </p>
-            <p>블루톤의 차분하고 안정적인 디자인으로 구성되었습니다.</p>
+            <h2>안녕하세요, ACOMM에 오신것을 환영합니다.최고의 산업용 컨버터를 합리적인 가격으로 제공하겠습니다.</h2>
+            <p>Niagara Framework과 쉽게 연결할 수 있도록 기술을 지원해드립니다.</p>
+            <p>합리적인 가격과 퍼포먼스로 만족시켜 드리겠습니다. </p>
         </section>
 
+        <!-- 카다로그 섹션이 아래와 같이 변경됩니다. -->
         <section id="catalog" class="content-section">
             <h2>카다로그</h2>
-            <p>다양한 제품 및 정보 카다로그를 확인하실 수 있습니다.</p>
-            <p>원하는 카다로그를 선택하여 상세 내용을 열람해보세요.</p>
-            <!-- 실제 GW1, GW2 내용은 해당 페이지 (catalog_gw1.html 등)에서 다룹니다. -->
+            <p>다양한 제품 및 정보 카다로그를 확인하실 수 있습니다. 원하는 카다로그를 선택하여 상세 내용을 열람하거나 다운로드하세요.</p>
+
+            <div class="product-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>제품명</th>
+                            <th>설명</th>
+                            <th>다운로드</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-1SE 제품 사진" class="product-thumbnail">
+                                MDBGW-1SE
+                            </td>
+                            <td>MDBGW 시리즈의 가장 기본적인 모델로, 안정적인 데이터 통신 환경을 제공합니다.</td>
+                            <td><a href="pdfs/MDBGW-1SE_manual.pdf" download="MDBGW-1SE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-1SPE 제품 사진" class="product-thumbnail">
+                                MDBGW-1SPE
+                            </td>
+                            <td>MDBGW-1SE 모델에 보안 강화 기능이 추가된 프리미엄 제품입니다.</td>
+                            <td><a href="pdfs/MDBGW-1SPE_manual.pdf" download="MDBGW-1SPE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-2SE 제품 사진" class="product-thumbnail">
+                                MDBGW-2SE
+                            </td>
+                            <td>두 개의 독립적인 채널을 지원하여 확장성이 뛰어난 표준 모델입니다.</td>
+                            <td><a href="pdfs/MDBGW-2SE_manual.pdf" download="MDBGW-2SE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-2SPE 제품 사진" class="product-thumbnail">
+                                MDBGW-2SPE
+                            </td>
+                            <td>MDBGW-2SE 모델의 보안 강화 버전으로, 이중 채널 환경에서 최고의 안정성을 제공합니다.</td>
+                            <td><a href="pdfs/MDBGW-2SPE_manual.pdf" download="MDBGW-2SPE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-4SE 제품 사진" class="product-thumbnail">
+                                MDBGW-4SE
+                            </td>
+                            <td>네 개의 채널을 동시에 운영할 수 있어 대규모 시스템에 적합한 표준 모델입니다.</td>
+                            <td><a href="pdfs/MDBGW-4SE_manual.pdf" download="MDBGW-4SE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-4SPE 제품 사진" class="product-thumbnail">
+                                MDBGW-4SPE
+                            </td>
+                            <td>MDBGW-4SE 모델에 고급 보안 및 관리 기능이 추가된 프리미엄 모델입니다.</td>
+                            <td><a href="pdfs/MDBGW-4SPE_manual.pdf" download="MDBGW-4SPE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-8SE 제품 사진" class="product-thumbnail">
+                                MDBGW-8SE
+                            </td>
+                            <td>최대 여덟 개의 채널을 지원하여 산업용 애플리케이션에 최적화된 표준 모델입니다.</td>
+                            <td><a href="pdfs/MDBGW-8SE_manual.pdf" download="MDBGW-8SE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="images/mdbgw_placeholder.png" alt="MDBGW-8SPE 제품 사진" class="product-thumbnail">
+                                MDBGW-8SPE
+                            </td>
+                            <td>MDBGW 시리즈 중 가장 강력한 성능과 최고 수준의 보안을 제공하는 최상위 모델입니다.</td>
+                            <td><a href="pdfs/MDBGW-8SPE_manual.pdf" download="MDBGW-8SPE_manual.pdf" class="download-button">다운로드</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section id="engineering" class="content-section">
