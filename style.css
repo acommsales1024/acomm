@@ -1,0 +1,165 @@
+/* style.css */
+
+/* 블루톤 색상 변수 정의 */
+:root {
+    --main-blue: #2c3e50; /* 헤더, 푸터 배경 등 진한 파랑 */
+    --light-blue: #3498db; /* 버튼, 강조색 등 중간 파랑 */
+    --highlight-blue: #5dade2; /* 호버 시 밝은 파랑 */
+    --text-light: #ecf0f1; /* 밝은 텍스트 색상 */
+    --text-dark: #333; /* 어두운 텍스트 색상 */
+    --background-light: #f4f4f4; /* 본문 배경 */
+    --background-white: #ffffff; /* 컨텐츠 박스 배경 */
+    --border-gray: #eee; /* 경계선 색상 */
+}
+
+/* 기본 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: var(--main-blue);
+    color: var(--text-light);
+    padding: 15px 20px;
+    display: flex; /* 로고와 메뉴를 한 줄에 정렬 */
+    justify-content: space-between; /* 양 끝으로 분리 */
+    align-items: center; /* 수직 가운데 정렬 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* 네비게이션 메뉴 스타일 */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* 메뉴 아이템을 가로로 정렬 */
+}
+
+nav ul li {
+    position: relative; /* 드롭다운 메뉴를 위한 기준점 설정 */
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    font-weight: bold;
+    transition: color 0.3s ease; /* 호버 시 부드러운 전환 효과 */
+}
+
+nav ul li a:hover,
+nav ul li a:focus, /* 키보드 접근성을 위한 focus 효과 */
+nav ul li a:active { /* 클릭 시 효과 */
+    color: var(--highlight-blue); /* 마우스 오버/클릭 시 색상 변경 */
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-content {
+    display: none; /* 기본적으로 숨김 */
+    position: absolute;
+    background-color: var(--light-blue); /* 드롭다운 배경색 */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* 다른 요소 위에 표시 */
+    border-radius: 4px;
+    overflow: hidden; /* 모서리 둥글게 */
+    top: 100%; /* 부모 li 바로 아래에 위치 */
+    left: 0;
+}
+
+.dropdown-content a {
+    color: var(--text-light);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease; /* 호버 시 부드러운 전환 효과 */
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus,
+.dropdown-content a:active {
+    background-color: var(--highlight-blue); /* 드롭다운 메뉴 아이템 호버/클릭 시 색상 */
+    color: var(--text-light); /* 텍스트 색상 유지 */
+}
+
+/* 드롭다운 부모 메뉴에 마우스 올리면 드롭다운 내용 보이기 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 메인 컨텐츠 영역 스타일 */
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.hero-section {
+    background-color: var(--background-white);
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hero-section h2 {
+    color: var(--light-blue);
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.content-section {
+    background-color: var(--background-white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.content-section h2 {
+    color: var(--main-blue);
+    font-size: 2em;
+    border-bottom: 2px solid var(--border-gray);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 폼 요소 스타일 (문의하기 섹션) */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 12px;
+    border: 1px solid var(--border-gray);
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s 
