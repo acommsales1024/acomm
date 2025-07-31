@@ -219,26 +219,22 @@ table {
     table-layout: fixed; /* 테이블 너비 고정! */
 }
 
-/* !!! td (실제 데이터 셀)의 너비는 4개 컬럼 기준으로 유지합니다. !!! */
-/* td (실제 데이터 셀)의 너비를 4개 컬럼 기준으로 조정합니다. */
-table td:nth-child(1) { /* 제품 이미지 컬럼 */
-    width: 10%; /* 이전과 동일 */
-    text-align: center; /* 이미지 중앙 정렬 */
+/* 실제 td 컬럼 너비 조정 (총 3개 컬럼에 맞춰 재조정) */
+table td:nth-child(1) { /* 1번째 td: 제품명 (이미지 + 텍스트) 컬럼 */
+    width: 25%; /* 상대적으로 작은 폭 */
+    /* 제품명 셀 내부 정렬 (이미지 + 텍스트) */
+    display: flex; /* 자식 요소를 flex 아이템으로 만듦 */
+    align-items: center; /* 자식 요소들을 수직 가운데 정렬 */
+    /* text-align: left; 기본적으로 flex 컨테이너는 왼쪽 정렬이므로 명시적으로 선언 안 함 */
 }
 
-table td:nth-child(2) { /* 제품명 텍스트 컬럼 */
-    width: 20%; /* 이전과 동일 */
-    word-wrap: break-word; /* 긴 단어 강제 줄 바꿈 */
-    text-align: center; /* 제품명 텍스트 중앙 정렬 */
-}
-
-table td:nth-child(3) { /* 설명 컬럼 - 너비를 늘려줍니다 (50% -> 55%) */
-    width: 55%; 
+table td:nth-child(2) { /* 2번째 td: 설명 컬럼 */
+    width: 60%; /* 설명이 가장 크게 보이도록 넓게 할당 */
     word-wrap: break-word; /* 긴 단어 강제 줄 바꿈 */
 }
 
-table td:nth-child(4) { /* 다운로드 컬럼 - 너비를 줄여줍니다 (20% -> 15%) */
-    width: 15%; 
+table td:nth-child(3) { /* 3번째 td: 다운로드 컬럼 */
+    width: 15%; /* 상대적으로 작은 폭 */
     text-align: center; /* 다운로드 버튼 중앙 정렬 */
 }
 
@@ -249,28 +245,27 @@ table th, table td {
     vertical-align: middle; /* 세로 중앙 정렬 유지 */
 }
 
-/* 헤더(타이틀) 부분 색상 포인트 - 이제 th는 3개입니다. */
+/* 헤더(th) 색상 포인트 - 3개의 th에 맞게 재적용 */
 table th {
     background-color: var(--light-blue); /* 기본 헤더 배경색 */
     color: var(--text-light); /* 헤더 글자색 유지 (흰색) */
     font-weight: bold;
     text-transform: uppercase;
-    text-align: center; /* 헤더 텍스트 중앙 정렬 유지 */
-    padding: 15px; /* 헤더의 패딩 유지 */
+    text-align: center; /* 헤더 텍스트 중앙 정렬 */
+    padding: 15px; /* 헤더 패딩 유지 */
 }
 
-/* 첫 번째 th (제품명 - colspan 적용됨) */
-table th:first-child { /* 첫 번째 th는 제품 이미지와 제품명이 합쳐진 '제품명' 헤더 */
-    background-color: var(--highlight-blue); /* 가장 눈에 띄는 하이라이트 블루 */
-    /* colspan 적용으로 경계선 조정은 불필요하거나, 개별 디자인에 따라 추가 */
+/* 각 헤더 (th) 별 색상 포인트 */
+table th:nth-child(1) { /* '제품명' 헤더 */
+    background-color: var(--highlight-blue); /* 밝은 블루로 강조 */
 }
-/* 두 번째 th (설명) */
-table th:nth-child(2) {
-    background-color: var(--light-blue); /* light-blue 유지 */
+
+table th:nth-child(2) { /* '설명' 헤더 */
+    background-color: var(--light-blue); /* 기본 라이트 블루 유지 */
 }
-/* 세 번째 th (다운로드) */
-table th:last-child { /* 마지막 th는 다운로드 헤더 */
-    background-color: var(--highlight-blue); /* 하이라이트 블루 */
+
+table th:nth-child(3) { /* '다운로드' 헤더 */
+    background-color: var(--highlight-blue); /* 다운로드 버튼처럼 강조 */
 }
 
 
@@ -285,19 +280,20 @@ table tbody tr:hover { /* 마우스 오버 시 행 배경색 */
 
 /* 제품 사진 썸네일 스타일 */
 .product-thumbnail {
-    width: 60px; /* 사진 크기를 이전 50px에서 60px로 약간 늘림 */
+    width: 60px; /* 사진 크기 */
     height: 60px;
     object-fit: contain; /* 이미지가 잘리지 않고 전체 보이도록 */
     border-radius: 4px; /* 사진 모서리 둥글게 */
     border: 1px solid var(--border-gray);
-    display: block; /* margin auto가 작동하도록 block 요소로 변경 */
-    margin: 0 auto; /* 수평 가운데 정렬 */
+    /* flexbox 자식 요소로 동작 시, flex-shrink와 margin-right로 간격 조정 */
+    flex-shrink: 0; /* 이미지가 셀 크기 때문에 줄어들지 않도록 */
+    margin-right: 10px; /* 이미지와 텍스트 사이 간격 */
 }
 
 /* 다운로드 버튼 스타일 */
 .download-button {
-    display: inline-block; /* 버튼처럼 보이게 */
-    background-color: var(--light-blue); /* 다운로드 버튼 배경색 (기존과 동일) */
+    display: inline-block;
+    background-color: var(--light-blue);
     color: var(--text-light);
     padding: 8px 15px;
     text-decoration: none;
@@ -309,8 +305,8 @@ table tbody tr:hover { /* 마우스 오버 시 행 배경색 */
 
 .download-button:hover,
 .download-button:focus {
-    background-color: var(--highlight-blue); /* 마우스 오버 시 색상 변경 */
-    color: var(--text-light); /* 텍스트 색상 유지 */
+    background-color: var(--highlight-blue);
+    color: var(--text-light);
 }
 
 /* ... (나머지 푸터 스타일 등 기존 스타일 유지) ... */
