@@ -220,23 +220,18 @@ table {
 }
 
 /* !!! td (실제 데이터 셀)의 너비는 4개 컬럼 기준으로 유지합니다. !!! */
-table td:nth-child(1) { /* 제품 이미지 컬럼 */
-    width: 10%; /* 이미지 크기에 맞춰 너비 조정 */
-    text-align: center; /* 이미지 중앙 정렬 */
-}
-
-table td:nth-child(2) { /* 제품명 텍스트 컬럼 */
+table td:nth-child(1) { /* 제품명 텍스트 컬럼 */
     width: 20%;
     word-wrap: break-word; /* 긴 단어 강제 줄 바꿈 */
     text-align: center; /* 제품명 텍스트 중앙 정렬 */
 }
 
-table td:nth-child(3) { /* 설명 컬럼 */
+table td:nth-child(2) { /* 설명 컬럼 */
     width: 50%; /* 설명 컬럼을 넓게 할당 */
     word-wrap: break-word; /* 긴 단어 강제 줄 바꿈 */
 }
 
-table td:nth-child(4) { /* 다운로드 컬럼 */
+table td:nth-child(3) { /* 다운로드 컬럼 */
     width: 20%;
     text-align: center; /* 다운로드 버튼 중앙 정렬 */
 }
